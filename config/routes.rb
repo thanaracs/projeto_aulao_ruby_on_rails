@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root :to => "hello#index"
+  # root :to => "hello#index"
+  root "dashboard#index"
 
   #      rota       metodo para acessar
   get '/people' => 'person#index'
