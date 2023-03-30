@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Categories</h4>
+    </div>
+    <div class="panel-body">
+        <%= link_to 'New Category', new_category_path, class: 'btn btn-primary' %><br><br>
+        <div class="table-response">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @categories.each do |category| %>
+                        <tr>
+                            <td><%= category.id %></td>
+                            <td><%= category.name %></td>
+                            <td><%= category.desc %></td>
+                            <td>
+                                <%= link_to 'Edit', edit_category_path(category), class: 'btn btn-small btn-info' %>
+                                <%= link_to 'Delete', category, method: :delete, class: 'btn btn-small btn-danger' %>    
+                            </td>                         
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

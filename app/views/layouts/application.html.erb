@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%# <%= javascript_importmap_tags %>
   </head>
   <header>
     <nav class="navbar navbar-default">
@@ -37,13 +37,19 @@
   </header>
 
   <body>
-    <%= yield %>
+    <main>
+      <div class="container">
+        <div class="rouw">
+          <%= yield %>
+        </div>
+      </div>
+      </main>
   </body>
 
-    <footer id="footer">
+    <footer id="footer" class="navbar-default">
       <div class="container">
         <div class="row text-center">
-          <%=  %>
+          <p>&copy; All rights Reserved</p>
         </div>
       </div>
     </footer>

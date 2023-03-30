@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   # root :to => "hello#index"
   root "dashboard#index"
 
-  #      rota       metodo para acessar
-  get '/people' => 'person#index'
-  get '/people/id' => 'person#show'
-  get '/people/new' => 'person#new'
-  post '/people' => 'person#create'
-  delete '/people/1' => 'person#delete'
+  # #      rota       metodo para acessar
+  # get '/people' => 'person#index'
+  # get '/people/id' => 'person#show'
+  # get '/people/new' => 'person#new'
+  # post '/people' => 'person#create'
+  # delete '/people/1' => 'person#delete'
 
   # resources :person    == criar todas as rotas de crud
-  resources :hello
+  # resources :hello
+  resources :categories
 end
