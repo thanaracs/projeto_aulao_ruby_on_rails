@@ -47,8 +47,7 @@ gem "sassc-rails"
 gem "sass-rails", '~> 5.0'
 # Use Bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3.6'
-
-
+gem 'pg'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

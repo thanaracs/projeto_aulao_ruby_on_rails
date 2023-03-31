@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   # resources :person    == criar todas as rotas de crud
   # resources :hello
-  resources :categories
+  resources :categories 
+  get '/categories/:id/delete' => 'categories#delete'
 end

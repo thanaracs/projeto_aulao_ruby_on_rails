@@ -4,8 +4,15 @@ class CategoriesController < ApplicationController
     def index
         @categories = Category.all
     end
+
     def new
         @category = Category.new
+    end
+
+    def show
+        category = Category.find(params[:id])
+        # Não precisa de um template para essa ação
+        delete()
     end
 
     def edit
@@ -29,18 +36,19 @@ class CategoriesController < ApplicationController
         end
     end
 
-    def destroy
+    def delete
+        @category = Category.find(params[:id])
         @category.destroy
-
-        respond_to do |format|
-            format.html { redirect_to categories_url }
-        end
-    end
+      
+        redirect_to categories_url 
+        #notice: "Item excluído com sucesso."
+    end   
 
     private
-    def set_category
-        @category = Category.find(params[:id])
-    end
+        def set_category
+            @category = Category.find(params[:id])
+        end
+        
         def category_params
             params.require(:category).permit(:name, :desc)
         end
