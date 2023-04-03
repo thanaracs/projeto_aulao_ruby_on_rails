@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Bills</h4>
+    </div>
+    <div class="panel-body">
+        <%= link_to 'New Bill', new_bill_path, class: 'btn btn-primary' %><br><br>
+        <div class="table-response">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @bills.each do |bill| %>
+                        <tr>
+                            <td><%= bill.id %></td>
+                            <td><%= bill.name %></td>
+                            <td><%= bill.value %></td>
+                            <td><%= bill.category %></td>
+                            <td>
+                                <%= link_to 'Edit', edit_bill_path(bill), class: 'btn btn-small btn-info' %>
+                                <%= link_to 'Delete', bill, method: :delete, class: 'btn btn-small btn-danger' %>    
+                                <% if flash[:notice] %>
+                                    <div class="alert alert-success">
+                                        <%= flash[:notice] %>
+                                    </div>
+                                <% end %>
+                            </td>                         
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
